@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primarycolor:#6915C3;
+    --maincolor:white;
+    --bodygrey:#C7C4C4;
+    --primarydarkpurple:#550EA0;
+    --primaryfont:Arial, Helvetica, sans-serif;
+    --fieldcolor:#D9D9D9;
+}
+
+/*Login*/
+#mainlog,#mainreg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100dvh;
+}
+#introContainer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-family:var(--primaryfont);
+margin-top:23px;
+gap: 10px;
+}
+.introHeading{
+    color: var(--maincolor);
+}
+.introDisc{
+color:var(--bodygrey);
+}
+#loginMain form,#regMain form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    margin-top: 10px;
+ 
+}
+
+#loginMain form p{
+    font-family:var(--primaryfont);
+    color: var(--bodygrey);
+}
+.emaillog,.passwordlog{
+padding: 10px;
+border-radius: 3px;
+border: none;
+ width: 400px;
+height: 25px;
+background-color: var(--fieldcolor);
+color: var(--primarycolor); 
+}
+
+#endlog,#endreg{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+font-family: var(--primaryfont);
+color: var(--maincolor);
+margin: 30px 30px;
+padding: 7px;
+
+}
+#endlog h2,#endreg h2{
+    font-size: 50px;
+}
+.emaillog:focus,.passwordlog:focus,.emailreg:focus,.passwordreg:focus{
+transform: scale(1.01);
+background-color: var(--maincolor);
+}
+.loginBtn,.regBtn{
+background-color: var(--primarydarkpurple);
+color: var(--bodygrey);
+padding: 5px;
+width: 152px;
+height: 40px;
+border: none;
+border-radius: 40px;
+cursor: pointer;
+}
+/*Setting*/
+nav,ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    font-family:var(--primaryfont);
+    color: var(--bodygrey);
+    background-color: var(--primarydarkpurple);
+    height: 50px;
+ font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+  position: relative;
+  z-index: 1000;
+    
+}
+
+li{
+    list-style-type: none;
+}
+
+#settingMain,#profileMain{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    height: 100dvh;
+    background-color: var(--primarycolor);
+}
+#settingMain h2,#profileMain h2{
+    margin: 20px;
+    color: var(--maincolor);
+    font-family: var(--primaryfont);
+    background-color: var(--primarycolor);
+}
+#settingAll,#profileContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.settingElement{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    font-family: var(--primaryfont);
+    gap: 30px;
+    justify-content: space-between;
+
+}
+.settingClass{
+    display: flex;
+    flex-direction: column;
+  margin: 10px;
+  gap: 10px;
+
+   
+}
+
+
+.switch {
+    width: 58px;
+    height: 25px;
+    background-color:#333333;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+ 
+}
+
+.knob {
+    width: 20px;
+    height: 20px;
+    background-color: var(--maincolor);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+.active{
+background-color: var(--maincolor);
+
+}
+.activeknob{
+    background-color: black;
+    left: 32px;
+}
+
+.settingLabel,.profileLabel{
+    color: var(--maincolor);
+}
+.settingDesc,.profileDesc{
+    color: var(--bodygrey);
+}
+
+
+#profilePhoto2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    gap: 10px;
+}
+#profilePhoto2 input[type="file"]{
+    width: 130px;
+}
+
+#profilePhoto form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    gap: 10px;
+}
+#profilePhoto form input[type="file"]{
+    width: 130px;
+}
+#profilePhoto form button{
+    background-color: var(--primarydarkpurple);
+    color: var(--bodygrey);
+    padding: 5px;
+    width: 152px;
+    height: 40px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.dp{
+    width: 130px;
+    height: 130px;
+}
+.profileInformation{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+  font-family: var(--primaryfont);
+margin-left: 30px;
+}
+.profileInformation div{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+#message1{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    width: 1000px;
+    height: 80vh;
+    background-color: grey;
+    border-radius: 12px;
+    margin-top: 26px;
+   overflow:auto;
+   
+}
+#me{
+font-family: sans-serif;
+font-size: 15px;
+background-color: rgb(0, 116, 0);
+color:white;
+width: 40%;
+height: 30px;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+margin-top: 20px;
+margin-left: 10px;
+padding: 5px;
+border-radius: 5px;
+}
+#computer{
+    position: relative;
+    left:50%;
+    background-color: rgb(168, 168, 168);
+    color: black;  
+width: 40%;
+height: 30px;
+display: flex;
+flex-direction: row;
+font-size: 15px;
+font-family: sans-serif;
+justify-content: flex-start;
+align-items: center;
+margin-top: 20px ;
+padding: 5px;
+border-radius: 5px;  
+
+
+}
+#extramsg1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+}
+#Typemessage1{
+    width: 800px;
+    height: 30px;
+    font-size: 15px;
+    padding: 5px;
+
+
+}
+#sendbtnmsg1{
+    background-color: blue;
+    border: none;
+    font-size: large;
+    width: 200px;
+    height: 44px;
+    color: white;
+    cursor: pointer;
+
+}
+@media screen and (max-width:1100px) {
+    #me,#computer{
+        font-size: 10px;
+    }
+}

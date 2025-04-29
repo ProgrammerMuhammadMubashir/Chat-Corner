@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: var(--primarycolor);
+        }
+        .emailreg,.passwordreg,.username{
+            padding: 10px;
+border-radius: 3px;
+border: none;
+ width: 400px;
+height: 40px;
+background-color: var(--fieldcolor);
+color: var(--primarycolor); 
+        }
+        
+    </style>
+</head>
+<body>
+
+    <main id="mainreg">
+        <div id="introContainer">
+<h1 class="introHeading">Dive into world of chatting</h1>
+<p class="introDisc">Where words come alive—connect, chat, and create moments that matter</p>
+</div>
+<div id="regMain">
+    <form action="/Register" method="post"  enctype="multipart/form-data">
+        <input type="text" required spellcheck="true" name="username" class="username" autofocus placeholder="Write your name here">
+    <input type="email" required spellcheck="true" name="emailreg" class="emailreg"  placeholder="Write your email here">
+    <input type="password" required spellcheck="true" name="passwordreg" class="passwordreg"  placeholder="Write your password here">
+<div id="profilePhoto2">
+            <img src=""  class="dp">
+            <input type="file" name="image"  class="fileInput"/>
+            <button type="submit" class="regBtn">Register</button>
+            </div>
+    </div>
+</form>
+</div>
+<div id="endreg">
+<h2>Chat Corner</h2>
+<canvas class="stylereg" width="250" height="250"></canvas>
+</div>
+    </main>
+    <script src="scriptReg.js"></script>
+</body>
+</html>

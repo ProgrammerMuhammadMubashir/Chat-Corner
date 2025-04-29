@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav >
+    <h1 style="width: 20%; margin-left: 20px; color: var(--maincolor);">Chat Corner</h1>
+    <ul>
+        <li>Home</li>
+        <li>Setting</li>
+        <li>Profile</li>
+    </ul>
+</nav>
+<main id="profileMain">
+<h2>Profile</h2>
+<div id="profilePhoto">
+    <form action="/Profile" method="post" enctype="multipart/form-data">
+        <img src="<%= urlImg %>"  class="dp">
+        <input type="file" name="image"  class="fileInput"/>
+        <button type="submit">Submit</button>
+      </form>
+</div>
+<div class="profileInformation">
+    <div>
+        <h3 class="profileLabel">Name</h3>
+        <p class="profileDesc"><%= username %></p>
+    </div>
+    <div>
+        <h3 class="profileLabel">Referral id</h3>
+        <p class="profileDesc"><%= refid %></p>
+    </div>
+    <div>
+        <p class="profileDesc" style="display: flex; justify-content: center; align-items: center;"><%= msg %></p>
+    </div>
+</div>
+</main>
+
+<script src="scriptProfile.js"></script>
+</body>
+</html>
