@@ -3,7 +3,7 @@ import { v2 as cloudinary } from "cloudinary"
 
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
-
+import userCollection from "../models/connection.js"
 
     cloudinary.config({
         cloud_name: "dskx8uqcj",
@@ -11,7 +11,7 @@ import { CloudinaryStorage } from "multer-storage-cloudinary";
         api_secret: "CNlskAOniLWuuNPfa6s060azCxg"
       });
     
-      const storage = new CloudinaryStorage({
+  const storage = new CloudinaryStorage({
         cloudinary,
         params: {
           folder: "uploads",
@@ -20,5 +20,4 @@ import { CloudinaryStorage } from "multer-storage-cloudinary";
         },
       });
       const upload = multer({ storage });
-
 export default upload

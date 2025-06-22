@@ -13,12 +13,12 @@
 }
 
 /*Login*/
-#mainlog,#mainreg{
+#mainlog,#mainreg,#forgetLog{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 100dvh;
+    height: fit-content;
 }
 #introContainer{
 display: flex;
@@ -26,123 +26,174 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 font-family:var(--primaryfont);
-margin-top:23px;
-gap: 10px;
+margin-top:7vh;
+gap: 3vh;
 }
 .introHeading{
     color: var(--maincolor);
+    font-size: clamp(1rem,1.7rem,2rem);
 }
 .introDisc{
 color:var(--bodygrey);
 }
-#loginMain form,#regMain form{
+#loginMain form,#forgetMain form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 17px;
-    margin-top: 10px;
- 
+    gap: 3vh;
+    margin-top: 7vh;
+    width: 100%;
+    
+}
+#regMain form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 7vh;
+    width: 100%;
+    
+}
+.divInsideForm{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 3vh;
 }
 
-#loginMain form p{
+
+
+#loginMain form p,#forgetMain form p{
     font-family:var(--primaryfont);
     color: var(--bodygrey);
+    white-space: pre-wrap;
+    margin-left: 2vh;
+    margin-right: 2vh;
 }
-.emaillog,.passwordlog{
+
+.emaillog,.passwordlog,.emailForget,.forgetCode,.passwordForget{
 padding: 10px;
 border-radius: 3px;
 border: none;
- width: 400px;
-height: 25px;
+ width: 30%;
+height: 3vh;
 background-color: var(--fieldcolor);
 color: var(--primarycolor); 
 }
 
-#endlog,#endreg{
+#endlog,#endreg,#endForget{
+    width:100%;
 display: flex;
-flex-direction: row;
-justify-content: space-between;
+justify-content: space-around;
 align-items: center;
+
 font-family: var(--primaryfont);
 color: var(--maincolor);
-margin: 30px 30px;
-padding: 7px;
+
+padding-bottom: 2vh;
+position: absolute;
+bottom:0;
+
 
 }
-#endlog h2,#endreg h2{
-    font-size: 50px;
+#endlog h2,#endreg h2,#endForget h2{
+    font-size: clamp(1rem,2rem,3rem);
 }
-.emaillog:focus,.passwordlog:focus,.emailreg:focus,.passwordreg:focus{
+.emaillog:focus,.passwordlog:focus,.emailreg:focus,.passwordreg:focus,.username:focus,.forgetCode:focus,.passwordForget:focus{
 transform: scale(1.01);
 background-color: var(--maincolor);
 }
-.loginBtn,.regBtn{
+.loginBtn,.forgetBtn,.forgetBtn2{
 background-color: var(--primarydarkpurple);
 color: var(--bodygrey);
 padding: 5px;
-width: 152px;
-height: 40px;
+width: 15%;
+height: 7vh;
 border: none;
 border-radius: 40px;
 cursor: pointer;
 }
 /*Setting*/
-nav,ul{
+.headingNav{
+    margin-left: 2vh;
+width:20%;
+    font-size: clamp(0.8rem,1rem,1.3rem);
+}
+nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 30px;
+
     font-family:var(--primaryfont);
     color: var(--bodygrey);
     background-color: var(--primarydarkpurple);
-    height: 50px;
+    height: 7vh;
  font-size: 18px;
     cursor: pointer;
     width: 100%;
   position: relative;
   z-index: 1000;
-    
 }
-
+ul{
+     display: flex;
+    justify-content: space-around;
+    align-items: center;   
+     gap: 30px;
+     width: 80%;
+   
+}
+a{
+    text-decoration: none;
+    color: var(--bodygrey);
+}
 li{
     list-style-type: none;
 }
 
-#settingMain,#profileMain{
+#settingMain,#profileMain,#homeMain,#regMain{
     display: flex;
     flex-direction: column;
-    gap: 50px;
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
     background-color: var(--primarycolor);
 }
 #settingMain h2,#profileMain h2{
-    margin: 20px;
     color: var(--maincolor);
     font-family: var(--primaryfont);
     background-color: var(--primarycolor);
+    margin: 20px;
 }
-#settingAll,#profileContainer{
+#settingAll form,#profileContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 7vh;
+    gap:3vh;
+}
+#settingAll form button{
+        background-color: var(--primarydarkpurple);
+    color: var(--bodygrey);
+    padding: 5px;
+    width: 152px;
+    height: 40px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
 }
 .settingElement{
     display: flex;
-    width: 50%;
+    width: 100%;
     align-items: center;
     font-family: var(--primaryfont);
-    gap: 30px;
     justify-content: space-between;
 
 }
 .settingClass{
     display: flex;
     flex-direction: column;
-  margin: 10px;
-  gap: 10px;
+  gap: 1vh;
+
 
    
 }
@@ -235,42 +286,167 @@ margin-left: 30px;
     gap: 7px;
 }
 
+/*home*/
+
+#search form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vh;
+    width: 100%;
+    height: 7vh;
+    gap: 2vh;
+}
+.searchBar{
+   padding: 10px;
+border-radius: 3px;
+border: none;
+ width: 40%;
+height: 5vh;
+background-color: var(--fieldcolor);
+color: var(--primarycolor); 
+}
+.searchBar:focus{
+ transform: scale(1.01);
+background-color: var(--maincolor);
+}
+.searchBtn{
+    width: 15%;
+    height: 6vh;
+    background-color: var(--primarydarkpurple);
+    color: var(--bodygrey);
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+
+}
+#recentChats{
+    display: flex;
+    flex-direction: column;
+ 
+
+    width: 100%;
+    font-family: var(--primaryfont);
+}
+#recentChats h2{
+    margin: 3vh;
+    color: var(--maincolor);
+}
+.rce{
+    display: flex;
+    align-items: center;
+    margin: 3vh;
+    gap: 3vh;
+    height: 7vh;
+}
+.rce div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    cursor: pointer;
+}
+.rce div img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.rce div p{
+font-weight: 560;
+color: var(--maincolor);
+}
+.rce div span{
+    font-size: 12px;
+    color: var(--bodygrey);
+}
+
+
+
+
+
+#chatDetails{
+    display: flex;
+    height: 7vh;
+    background-color: var(--primarydarkpurple);
+    gap: 3vh;
+    font-family: sans-serif;
+    padding: 10px;
+}
+#chatDetails div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1vh;
+    margin-left: 2vh;
+}
+#chatDetails div p{
+font-weight: 560;
+color: var(--maincolor);
+}
+
+#chatDetails div span{
+    font-size: 12px;
+    color: var(--bodygrey);
+}
+#chatDetails div img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+
+
+
+#chatMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:3vh ;
+}
+
+
+
 #message1{
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    width: 1000px;
-    height: 80vh;
-    background-color: grey;
-    border-radius: 12px;
-    margin-top: 26px;
-   overflow:auto;
-   
+
+width: 80%;
+    height: 70vh;
+    padding: 5px;
+    background-color: var(--bodygrey);
+    overflow:auto;
+
+    
 }
 #me{
-font-family: sans-serif;
+  
+    font-family: sans-serif;
 font-size: 15px;
-background-color: rgb(0, 116, 0);
+background-color: var(--primarycolor);
 color:white;
 width: 40%;
-height: 30px;
+height: 5vh;
 display: flex;
-flex-direction: row;
 justify-content: flex-start;
 align-items: center;
-margin-top: 20px;
-margin-left: 10px;
-padding: 5px;
-border-radius: 5px;
+ 
+ padding: 5px;
+ position: relative;
+ left:56%;
+ border-radius: 5px;
+     margin-top: 20px
 }
 #computer{
+
     position: relative;
-    left:50%;
+    left:2%;
     background-color: rgb(168, 168, 168);
     color: black;  
 width: 40%;
-height: 30px;
+height: 5vh;
 display: flex;
 flex-direction: row;
 font-size: 15px;
@@ -283,33 +459,30 @@ border-radius: 5px;
 
 
 }
-#extramsg1{
+#extramsg{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 1000px;
+    background-color: #550EA0;
+    width: 80.7%;
+    
 }
-#Typemessage1{
-    width: 800px;
-    height: 30px;
-    font-size: 15px;
+
+#Typemessage{
+    
     padding: 5px;
-
+    width: 80%;
+    border: none;
+    border: 1px solid var(--primarycolor);
+    border-radius:3px ;
 
 }
-#sendbtnmsg1{
-    background-color: blue;
+ #sendmsgbtn{
+background-color: var(--primarycolor);
     border: none;
     font-size: large;
-    width: 200px;
-    height: 44px;
+
+    height: 7vh;
+    width: 20%;
     color: white;
     cursor: pointer;
 
-}
-@media screen and (max-width:1100px) {
-    #me,#computer{
-        font-size: 10px;
-    }
 }

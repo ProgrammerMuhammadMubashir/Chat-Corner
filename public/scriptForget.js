@@ -1,4 +1,9 @@
-const canvas = document.querySelector(".stylereg");
+let forgetBtn=document.querySelector(".forgetBtn")
+let emailForget=document.querySelector(".emailForget")
+let forgetForm=document.querySelector(".forgetForm")
+
+
+const canvas = document.querySelector(".endStyle");
 const ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "white";
@@ -10,29 +15,15 @@ ctx.rotate(-0.2 * Math.PI); // Rotate counterclockwise (adjust the angle as need
 // Draw the pie chart (face with open mouth)
 ctx.beginPath();
 ctx.moveTo(0, 0);
-ctx.arc(0, 0, 100, 0.2 * Math.PI, 1.8 * Math.PI, false);
+ctx.arc(0, 0, 100, 0.2 * Math.PI, 1.9 * Math.PI, false);
 ctx.lineTo(0, 0);
 ctx.fill();
 ctx.closePath()
 
 
-
-let dp=document.querySelector(".dp")
-let fileInput=document.querySelector(".fileInput")
-fileInput.addEventListener('change',(event)=>{
-       const file = event.target.files[0];
-       
-       if(file){
-       dp.src=URL.createObjectURL(file)
-       }
-})
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const darkmode = document.getElementById("darkmode");
-    const savedPrimaryColor= localStorage.getItem("--primarycolor");
+window.addEventListener("load", () => {
+  
+    const savedPrimaryColor = localStorage.getItem("--primarycolor");
     const savedPrimaryDarkPurple = localStorage.getItem("--primarydarkpurple");
 
     if (savedPrimaryColor && savedPrimaryDarkPurple) {
@@ -40,4 +31,3 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty('--primarydarkpurple', savedPrimaryDarkPurple);
     }
 });
-

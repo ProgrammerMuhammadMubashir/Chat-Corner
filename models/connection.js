@@ -11,7 +11,10 @@ const userSchema=mongoose.Schema({
     email:'String',
     password:'String',
     refid:"String",
-    urlImg:"String"
+ urlImg:"String",
+publicId:"String",
+
+
 })
 
 const userCollection=mongoose.model("user",userSchema)

@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setting</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-<nav >
-    <h1 style="width: 20%; margin-left: 20px; color: var(--maincolor);">Chat Corner</h1>
-    <ul>
-        <li>Home</li>
-        <li>Setting</li>
-        <li>Profile</li>
-    </ul>
-</nav>
+  <nav>
+        <h1 class="headingNav">Chat Corner</h1>
+        <ul>
+            <li><a href="/Home">Home</a></li>
+            <li><a href="/Setting">Setting</a></li>
+            <li><a href="/Profile">Profile</a></li>
+        </ul>
+    </nav>
 <main id="settingMain">
 <h2>Setting</h2>
 <div id="settingAll">
+    <form action="/Setting" method="post">
     <div class="settingElement">
         <div class="settingClass">
         <h3 class="settingLabel">Dark mode</h3>
@@ -27,34 +29,10 @@
         <div class="knob"></div>
     </div>
 </div>
-    <div class="settingElement">
-        <div class="settingClass">
-        <h3 class="settingLabel">Online Status</h3>
-        <p class="settingDesc">Others can see your online presence</p>
-    </div>
-    <div class="switch toggleSwitch active ">
-        <div class="knob activeknob"></div>
-    </div>
-</div>
-    <div class="settingElement">
-        <div class="settingClass">
-        <h3 class="settingLabel">Typing Status</h3>
-        <p class="settingDesc">Others can see you are typing message to them</p>
-    </div>
-    <div class="switch toggleSwitch active ">
-        <div class="knob activeknob"></div>
-    </div>
-</div>
-    <div class="settingElement">
-        <div class="settingClass">
-        <h3 class="settingLabel">Clear History</h3>
-        <p class="settingDesc">Automatic deletion of message history after a week</p>
-        </div>
-    <div class="switch toggleSwitch ">
-        <div class="knob"></div>
-    </div>
+
 </div>
 
+</form>
 </div>
 </main>
 <script src="scriptSetting.js"></script>

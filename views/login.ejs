@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <style>
         body{
             background-color: var(--primarycolor);
@@ -23,8 +24,8 @@
     <input type="email" required spellcheck="true" name="emaillog" class="emaillog" autofocus placeholder="Write your email here">
     <input type="password" required spellcheck="true" name="passwordlog" class="passwordlog"  placeholder="Write your password here">
     <button type="submit" class="loginBtn">Let me in</button>
-    <p>Not have an account? You can <a href="/Register" style="color:var(--maincolor);text-decoration: none;">Register</a> instead</p>
-    <p class="msg" style="color:(--bodygrey);font-family: var(--primaryfont);"><%= msg %></p>
+    <p>Not have an account? You can <a href="/Register" style="color:var(--maincolor);text-decoration: none;">Register</a>  instead or <a href="/Forget" style="color:var(--maincolor);text-decoration: none;">Forgot Password?</a></p>
+    <p class="msg" style="color:var(--bodygrey);font-family: var(--primaryfont);"><%= msg %></p>
 </form>
 </div>
 <div id="endlog">

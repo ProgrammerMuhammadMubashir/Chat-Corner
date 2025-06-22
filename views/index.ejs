@@ -5,17 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-    <nav >
-        <h1 style="width: 20%; margin-left: 20px; color: var(--maincolor);">Chat Corner</h1>
+    <nav>
+        <h1 class="headingNav">Chat Corner</h1>
         <ul>
-            <li>Home</li>
-            <li>Setting</li>
-            <li>Profile</li>
+            <li><a href="/Home">Home</a></li>
+            <li><a href="/Setting">Setting</a></li>
+            <li><a href="/Profile">Profile</a></li>
         </ul>
     </nav>
+    <main id="homeMain">
+<div id="search">
+    <form action="/Home" method="post">
+    <input type="search" name="searchBar" class="searchBar" placeholder="Search here">
+    <button type="submit" class="searchBtn" >Search</button>
+    </form>
+</div>
+<div id="recentChats">
+    <h2>Recent Chats</h2>
+<div class="rce">
+  <div class="rceDiv">
+    <img src="<%= urlImg  %>" class="imgOfOther">
+   <a href="/Chat?username=<%= encodeURIComponent(username) %>&imgUrl=<%= encodeURIComponent(urlImg) %>"><p id="NameOfOther"><%= username %></p></a>
+  </div>
+  
+</div>
+<p class="msg" style="color:(--bodygrey);font-family: var(--primaryfont);"><%= msg %></p>
+    </main>
 </body>
+<script src="scriptF.js"></script>
 </html>
 
 

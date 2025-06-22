@@ -10,7 +10,7 @@ ctx.rotate(-0.2 * Math.PI); // Rotate counterclockwise (adjust the angle as need
 // Draw the pie chart (face with open mouth)
 ctx.beginPath();
 ctx.moveTo(0, 0);
-ctx.arc(0, 0, 100, 0.2 * Math.PI, 1.8 * Math.PI, false);
+ctx.arc(0, 0, 100, 0.2 * Math.PI, 1.9 * Math.PI, false);
 ctx.lineTo(0, 0);
 ctx.fill();
 ctx.closePath()
