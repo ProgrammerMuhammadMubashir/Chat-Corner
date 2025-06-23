@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-const DBurl = "mongodb+srv://itismubashiratcode:Nvbyr1hW7p2iAycf@cluster0.kz8jyoi.mongodb.net/ChatCorner?retryWrites=true&w=majority";
+import dotenv from "dotenv";
+dotenv.config()
+const DBurl = process.env.DB_URL;
 mongoose.connect(`${DBurl}`).then(()=>{
     console.log("Connected to Database successfully")
 }).catch(()=>{

@@ -1,4 +1,5 @@
 import express from "express"
+
 const app=express()
 const port=3000 || process.env.port
 import http from "http"
@@ -14,7 +15,8 @@ import cookieParser from "cookie-parser"
 import userCollection from "./models/connection.js"
 import searchUser from "./controllers/Home.js"
 
-
+import dotenv from "dotenv";
+dotenv.config()
 
 app.set("view engine", "ejs")
 app.use(express.static('public'))

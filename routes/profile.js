@@ -5,7 +5,8 @@ import { v2 as cloudinary } from "cloudinary"
 import userCollection from "../models/connection.js";
 import upload from  "../controllers/Profile.js";
 const profileRoute=express.Router()
-
+import dotenv from "dotenv";
+dotenv.config()
 
 profileRoute.get("/",(req,res)=>{
   if(req.session.login){

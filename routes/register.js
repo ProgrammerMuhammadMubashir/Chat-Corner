@@ -4,6 +4,8 @@ import express from "express"
 import usercontroller from "../controllers/Register.js"
 const registerRoute=express.Router()
 
+import dotenv from "dotenv";
+dotenv.config()
 
 registerRoute.get("/",(req,res)=>{
   if(req.session && req.session.login){
