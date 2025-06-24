@@ -1,7 +1,7 @@
 # Chat App - Real-Time Messaging Platform
 
 
-
+#### Version 1.0
 A modern, responsive chat application with real-time bi-directional messaging, user authentication, and dark mode support.
 
 ## ✨ Features
@@ -50,6 +50,12 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)  
 4. Push to the branch (`git push origin feature/AmazingFeature`)  
 5. Open a Pull Request  
+
+### Future Updates
+- Messages History  
+- Friends and Network
+- More Advanced UI/UX
+- Accessibility and Control
 
 ### Installation
 ```bash
