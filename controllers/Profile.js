@@ -3,7 +3,6 @@ import { v2 as cloudinary } from "cloudinary"
 
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
-import userCollection from "../models/connection.js"
 import dotenv from "dotenv";
 dotenv.config()
 
