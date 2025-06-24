@@ -1,5 +1,6 @@
 import userCollection from "../models/connection.js";
 
+//For Starting chat with specific user by mentioning its unique referral id
 const searchUser=async(req,res)=>{
     const searchBar=req.body.searchBar
     let userFound=await userCollection.findOne({refid:searchBar})

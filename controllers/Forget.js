@@ -1,10 +1,12 @@
+
+// Declarations
 import userCollection from "../models/connection.js";
 import nodemailer from "nodemailer"
 import { v5 as uuidv5 } from 'uuid';
 import bcrypt from "bcrypt"
 import dotenv from "dotenv";
 dotenv.config()
-
+//Function handling password recovery and send code by using nodemailer
 const forgetPassword=async(req,res)=>{
   const email=req.body.emailForget
   let z=await userCollection.find({email:email})
@@ -20,10 +22,11 @@ if(z.length > 0 ){
 
   
 });
-const NAMESPACE = '6ba7b810-9dad-11d1-80b4-00c04fd430c8'
+
+const NAMESPACE = '6ba7b810-9dad-11d1-80b4-00c04fd430c8' 
 let e=Math.floor(Math.random()*1000)
 let y=Date.now()
-let code=uuidv5(String(e+y), NAMESPACE);
+let code=uuidv5(String(e+y), NAMESPACE); //To Generate unique code for every single user
 req.session.forget={email,code};
 
 const mailOptions = {
@@ -48,7 +51,7 @@ else{
     res.render("Forget.ejs",{msg:"Could not find email"})
 }
 }
-
+// Processing of code verification and updating new password for future refrence
 const forgetNextFunc=async(req,res)=>{
 let {forgetCode,passwordForget}=req.body
 let password=await bcrypt.hash(passwordForget,10)

@@ -13,7 +13,7 @@ imgOfOther.src=urlParams.get("imgUrl")
  const socket = io({
     query: {
       username:usernameOfOther.innerText,
-    }
+    } // To access other user for chat processing
     })
 
 
@@ -22,16 +22,16 @@ imgOfOther.src=urlParams.get("imgUrl")
     console.log(roomId);
     socket.emit("room", roomId);
     Typemessage.addEventListener("input", () => {
-      socket.emit("userTyping", usernameOfOther.innerText, roomId);
+      socket.emit("userTyping", usernameOfOther.innerText, roomId); //Typing Status Indicator
     });
     Typemessage.addEventListener("blur",()=>{
-        socket.emit("userNotTyping",usernameOfOther.innerText,roomId)
+        socket.emit("userNotTyping",usernameOfOther.innerText,roomId) // When user leave and stop writing,indicate
     })
     sendmsgbtn.addEventListener("click",()=>{
-        socket.emit("newMessage",Typemessage.value,socket.id,roomId)
+        socket.emit("newMessage",Typemessage.value,socket.id,roomId) //Message distribution
         Typemessage.value=""
     })
-    
+    //Default socket.io flaw handle and will send message on Enter key as most user are used of
     window.addEventListener("keydown",(event)=>{
 if(event.key==="Enter"){
   event.preventDefault()
@@ -41,7 +41,7 @@ if(event.key==="Enter"){
     })
   });
 
-  socket.on("Room", (activeRooms) => console.log(activeRooms));
+ 
 
   socket.on("userTyping", (statusTyping) => {
     statusOfOther.innerText = `${statusTyping} is typing`;
@@ -53,7 +53,7 @@ if(event.key==="Enter"){
     console.log(msg,socketId)
     if(socketId===socket.id){
 
-message1.innerHTML+=`<p id='me'>${msg}</p>`
+message1.innerHTML+=`<p id='me'>${msg}</p>` //id's me and compyter will keep sepeate msgs of both
 }
 else if(!(socketId===socket.id)){
 
@@ -63,6 +63,7 @@ else if(!(socketId===socket.id)){
     socket.on("joining",()=>{
       statusOfOther.innerText="Msg could be transfered now!"
     })
+    //Dark mode listener
 window.addEventListener("load", () => {
   
     const savedPrimaryColor = localStorage.getItem("--primarycolor");

@@ -5,7 +5,7 @@ const userAuthentication=async(req,res)=>{
     let {emaillog,passwordlog}=req.body;
     let userFound=await userCollection.findOne({email:emaillog})
     if(userFound){
-let verified=await bcrypt.compare(passwordlog,userFound.password)
+let verified=await bcrypt.compare(passwordlog,userFound.password) //Password encryption 
 if(verified){
     req.session.login=userFound
     res.redirect("/Home")
