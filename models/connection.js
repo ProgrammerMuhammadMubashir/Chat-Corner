@@ -4,8 +4,9 @@ dotenv.config()
 const DBurl = process.env.DB_URL;
 mongoose.connect(`${DBurl}`).then(()=>{
     console.log("Connected to Database successfully")
-}).catch(()=>{
+}).catch((error)=>{
     console.log("Failed to connnet to Database")
+    console.log(error)
 })
 
 const userSchema=mongoose.Schema({

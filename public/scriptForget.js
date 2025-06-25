@@ -5,7 +5,7 @@ let forgetForm=document.querySelector(".forgetForm")
 
 const canvas = document.querySelector(".endStyle");
 const ctx = canvas.getContext("2d");
-
+//Canavas (Mouth talking)
 ctx.fillStyle = "white";
 
 // Move origin to center and rotate the canvas

@@ -69,7 +69,6 @@ app.get("/Setting",(req,res)=>{
 app.post("/",userAuthentication)
 app.post("/Forget",forgetPassword)
 app.post("/Forget2",forgetNextFunc)
-
 app.post("/Home",searchUser)
 
 app.get("/Forget",(req,res)=>{
@@ -89,7 +88,13 @@ app.get("/Forget2",(req,res)=>{
   }
 })
 app.get("/Chat",(req,res)=>{
-res.render("chat.ejs")
+    if(req.session && req.session.login){
+        res.render("chat.ejs",{msg:""})
+      }
+      else{
+  res.render("login.ejs",{msg:"You have to login first"})
+
+  }
 })
 
 const server=http.createServer(app)
@@ -97,7 +102,7 @@ const io=new Server(server)
 let activeRooms=[]
 
 
-const wrap = middleware => (socket, next) => middleware(socket.request, {}, next)
+const wrap = middleware => (socket, next) => middleware(socket.request, {}, next) //io can access session of user to take information
 io.use(wrap(sessionMiddleware))
 io.on('connection', (socket) => {
   console.log('a user connected ' + socket.id);
@@ -105,7 +110,8 @@ io.on('connection', (socket) => {
   // Extract user names
   let myName = socket.request.session.login.username;
   let yourName = socket.handshake.query.username;
-  
+  myName=myName.trim()
+  yourName=yourName.trim()
   // Generate consistent room ID (sorted to avoid duplicates)
   let roomId = [myName, yourName].sort().join('_');
   socket.emit('roomId', roomId);

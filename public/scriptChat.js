@@ -41,7 +41,7 @@ if(event.key==="Enter"){
     })
   });
 
- 
+
 
   socket.on("userTyping", (statusTyping) => {
     statusOfOther.innerText = `${statusTyping} is typing`;
