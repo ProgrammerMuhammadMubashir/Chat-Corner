@@ -1,7 +1,7 @@
 import express from "express"
-
+import ServerlessHttp from "serverless-http"
 const app=express()
-const port=3000 || process.env.port
+
 import http from "http"
 import {Server} from "socket.io"
 import userInsertionFunc from "./controllers/Register.js"
@@ -160,8 +160,8 @@ io.to(roomId).emit("newMessage",msg,socketId)
 
 
 
+export default ServerlessHttp(app)
 
-
-server.listen(port,()=>{
-  console.log("Server is listening at port : " + port )
-})
+// server.listen(port,()=>{
+//   console.log("Server is listening at port : " + port )
+// })
