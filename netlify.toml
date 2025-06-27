@@ -1,6 +1,6 @@
 [build]
-  command = "npm install && npm run build"
-  publish = "build"
+  command = "npm install && echo 'Skipping build for Express server'"
+  publish = "public"  # Can be empty but must exist
   functions = "functions"
 
 [[redirects]]

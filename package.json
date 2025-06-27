@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "This will be great",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "build": "echo 'Building Express server' && mkdir -p functions && cp server.js functions/ || true",
+  "start": "nodemon server.js"  
+},
   "author": "MuhammadMubashirAttari",
   "license": "ISC",
   "type": "module",
