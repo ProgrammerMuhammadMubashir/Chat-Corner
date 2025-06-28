@@ -1,7 +1,8 @@
 import express from "express"
 import multer from "multer"
 import path from "path"
-import { v2 as cloudinary } from "cloudinary"
+import cloudinaryPackage from 'cloudinary';
+const { v2: cloudinary } = cloudinaryPackage;
 import userCollection from "../models/connection.js";
 import upload from  "../controllers/Profile.js";
 const profileRoute=express.Router()

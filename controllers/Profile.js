@@ -1,5 +1,5 @@
-
-import { v2 as cloudinary } from "cloudinary"
+import cloudinaryPackage from 'cloudinary';
+const { v2: cloudinary } = cloudinaryPackage;
 
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";

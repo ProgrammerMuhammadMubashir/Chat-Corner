@@ -71,4 +71,4 @@ cp .env.example .env
 # Edit the .env file with your credentials
 
 # Start the development server
-npm run dev
+node script.js

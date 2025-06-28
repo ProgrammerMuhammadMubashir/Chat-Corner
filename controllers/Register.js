@@ -1,6 +1,8 @@
 import userCollection from "../models/connection.js";
-import { v2 as cloudinary } from "cloudinary"
+import cloudinaryPackage from 'cloudinary';
+const { v2: cloudinary } = cloudinaryPackage;
 import path from "path"
+
 
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
