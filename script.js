@@ -17,6 +17,7 @@ import searchUser from "./controllers/Home.js"
 
 import dotenv from "dotenv";
 dotenv.config()
+const port=3000 || process.env.port
 
 app.set("view engine", "ejs")
 app.use(express.static('public'))
@@ -154,8 +155,8 @@ io.to(roomId).emit("newMessage",msg,socketId)
 
 
 
-export default ServerlessHttp(app)
 
-// server.listen(port,()=>{
-//   console.log("Server is listening at port : " + port )
-// })
+
+server.listen(port,()=>{
+  console.log("Server is listening at port : " + port )
+})

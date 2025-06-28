@@ -1,7 +1,33 @@
-# Ignore all .txt files
-*.txt
+# Environment
 .env
+.env.local
+.env.*.local
 
-# Ignore node_modules folder
+# Dependencies
 node_modules/
-.env
+.npm
+
+
+# Build directories
+.netlify
+dist/
+build/
+
+# Netlify Functions (keep this EXACTLY as shown)
+netlify/functions/**
+!netlify/functions/.gitkeep
+
+# IDE & OS files
+.DS_Store
+.idea
+.vscode
+*.swp
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Local testing
+.test
+coverage/

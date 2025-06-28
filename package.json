@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "This will be great",
   "main": "index.js",
-"scripts": {
-  "build": "echo 'Building Express server' && mkdir -p functions && cp server.js functions/ || true",
-  "start": "nodemon server.js"  
-},
+  "scripts": {
+    "build": "if not exist netlify\\functions mkdir netlify\\functions && copy /Y server.js netlify\\functions\\",
+    "dev": "nodemon server.js",
+    "netlify-dev": "netlify dev"
+  },
   "author": "MuhammadMubashirAttari",
   "license": "ISC",
   "type": "module",

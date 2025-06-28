@@ -1,0 +1,32 @@
+what needed to be done:
+
+
+--> Adding image at Reg form : Frontend done on 29 April , Complete Done on 29 April
+--> Handling routes on basis of login session : Done on 29 April
+--> Creation of Home page according to figma 
+--> Home-page chat setup
+
+
+---------------------------------------------------------------------------------------------
+
+16 June --- 17 June:
+--> Handling users
+--> Handling Previous chats , last scenes , showing typing , online , offline , seen , sent status
+
+
+18 June --- 19 June:
+--> Adding Functionality of forget password  --Done on 16 June 2025
+--> Handling profile neccessary upload, required always, not deletion of previous img --Done on 16 June 2025
+--> Adding up backend Functionality+Localhost settings for setting page
+
+20 June :
+
+--> Testing whole website
+--> Maintenance 
+--> Responsivness + Finishing of website
+
+21 June
+--> Pushing to GitHub 
+--> Deploying to vercel
+
+Deadline : 21 th June
