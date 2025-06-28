@@ -36,9 +36,6 @@ A modern, responsive chat application with real-time bi-directional messaging, u
 - Start chatting with other users  
 - See real-time typing indicators  
 
-### 🚫 Usage Policy  
-Unauthorized forking, redistribution, or unethical use of this project is **strictly prohibited**. Access to this repository is granted with the understanding that you will adhere to ethical and professional standards. 
-
 ### 🛠️ Built With
 - **Frontend**: Plain HTML and CSS
 - **Backend**: Node.js, Express.js  

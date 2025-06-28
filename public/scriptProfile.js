@@ -1,10 +1,10 @@
 let dp=document.querySelector(".dp")
 let fileInput=document.querySelector(".fileInput")
-fileInput.addEventListener('change',(event)=>{ 
+fileInput.addEventListener('change',(event)=>{
        const file = event.target.files[0];
        
        if(file){
-       dp.src=URL.createObjectURL(file) //Upload image by creation of temporary URL
+       dp.src=URL.createObjectURL(file)
        }
 })
 
