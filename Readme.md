@@ -57,6 +57,10 @@ Contributions are welcome! Please follow these steps:
 - More Advanced UI/UX
 - Accessibility and Control
 
+
+## 🎥 Demo
+[Watch Full Demo](https://www.loom.com/share/bcb51630db874d0da03e0aa1e90d336a)
+
 ### Installation
 ```bash
 # Clone the repository
