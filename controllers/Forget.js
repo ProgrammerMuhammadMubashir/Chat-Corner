@@ -48,7 +48,7 @@ transporter.sendMail(mailOptions,async (error, info) => {
 })
 }
 else{
-    res.render("Forget.ejs",{msg:"Could not find email"})
+    res.render("forget.ejs",{msg:"Could not find email"})
 }
 }
 // Processing of code verification and updating new password for future refrence
@@ -63,10 +63,10 @@ if(forgetCode===code){
   res.redirect("/")
 }
 else if (forgetCode !== code){
-res.render("Forget2.ejs",{msg:"Verification code did not match."})
+res.render("forget2.ejs",{msg:"Verification code did not match."})
 }
 else{
-  res.render("Forget.ejs",{msg:"Something went wrong"})
+  res.render("forget.ejs",{msg:"Something went wrong"})
 }
 }
 

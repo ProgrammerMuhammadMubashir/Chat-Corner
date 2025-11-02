@@ -44,7 +44,7 @@ if(event.key==="Enter"){
  
 
   socket.on("userTyping", (statusTyping) => {
-    statusOfOther.innerText = `${statusTyping} is typing`;
+    statusOfOther.innerText = `${statusTyping} is typing....`;
   });
   socket.on("userNotTyping",(statusNotTyping,roomId)=>{
     statusOfOther.innerText=""
@@ -63,8 +63,12 @@ else if(!(socketId===socket.id)){
     socket.on("joining",()=>{
       statusOfOther.innerText="Msg could be transfered now!"
     })
+
+    socket.on("leaving",()=>{
+      statusOfOther.innerText="Other user is not there.Messages will only be transfered when both users are online "
+    })
     //Dark mode listener
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   
     const savedPrimaryColor = localStorage.getItem("--primarycolor");
     const savedPrimaryDarkPurple = localStorage.getItem("--primarydarkpurple");

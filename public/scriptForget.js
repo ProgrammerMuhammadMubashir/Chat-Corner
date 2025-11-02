@@ -21,13 +21,16 @@ ctx.fill();
 ctx.closePath()
 
 
-window.addEventListener("load", () => {
-  
-    const savedPrimaryColor = localStorage.getItem("--primarycolor");
+document.addEventListener("DOMContentLoaded", () => {
+    const darkmode = document.getElementById("darkmode");
+    const savedPrimaryColor= localStorage.getItem("--primarycolor");
     const savedPrimaryDarkPurple = localStorage.getItem("--primarydarkpurple");
+    const savedGradient=localStorage.getItem("--gradient")
 
     if (savedPrimaryColor && savedPrimaryDarkPurple) {
         document.documentElement.style.setProperty('--primarycolor', savedPrimaryColor);
         document.documentElement.style.setProperty('--primarydarkpurple', savedPrimaryDarkPurple);
+        document.documentElement.style.setProperty('--gradient', savedGradient);
+        
     }
 });

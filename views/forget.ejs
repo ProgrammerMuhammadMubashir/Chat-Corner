@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        body{
+background: var(--gradient);
+              background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <main id="forgetlog">
+        <div id="introContainer">
+<h1 class="introHeading">Dive into world of chatting</h1>
+<p class="introDisc">Where words come alive—connect, chat, and create moments that matter</p>
+</div>
+<div id="forgetMain">
+    <form action="/Forget" method="post" class="forgetForm">
+    <input type="email" required spellcheck="true" name="emailForget" class="emailForget" autofocus placeholder="Write your email here">
+    <!-- <input type="password" required spellcheck="true" name="passwordlog" class="passwordlog"  placeholder="Write your password here"> -->
+    <button type="submit" class="forgetBtn">Send code</button>
+    <!-- <p>Not have an account? You can <a href="/Register" style="color:var(--maincolor);text-decoration: none;">Register</a>  instead or <a href="/Forget" style="color:var(--maincolor);text-decoration: none;">Forgot Password?</a></p> -->
+    <p class="msg" style="color:(--bodygrey);font-family: var(--primaryfont);"><%= msg %></p>
+</form>
+</div>
+<div id="endForget">
+<h2>Chat Corner</h2>
+<canvas class="endStyle" width="250" height="250"></canvas>
+</div>
+    </main>
+    <script src="scriptForget.js"></script>
+</body>
+</html>

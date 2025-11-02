@@ -4,8 +4,9 @@ import userCollection from "../models/connection.js";
 const searchUser=async(req,res)=>{
     const searchBar=req.body.searchBar
     let userFound=await userCollection.findOne({refid:searchBar})
-    if(userFound){
+    if(userFound && userFound.email!==req.session.login.email){
         res.render("index.ejs",{username:userFound.username,urlImg:userFound.urlImg,msg:""})
+
     }
     else{
         

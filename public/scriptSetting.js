@@ -16,14 +16,18 @@ darkmode.addEventListener("click",()=>{
     if(darkmode.classList.contains("active")){
     document.documentElement.style.setProperty('--primarycolor', "Black");
     document.documentElement.style.setProperty('--primarydarkpurple', "#333333");
-    localStorage.setItem('--primarycolor',"black")
+    document.documentElement.style.setProperty('--gradient', "Black");
+    localStorage.setItem('--primarycolor',"Black")
     localStorage.setItem("--primarydarkpurple","#333333")
+    localStorage.setItem("--gradient","Black")
 }
     else if (!darkmode.classList.contains("active")){
         document.documentElement.style.setProperty('--primarycolor',"#6915C3" );
         document.documentElement.style.setProperty('--primarydarkpurple', "#550EA0");
+        document.documentElement.style.setProperty('--gradient', "linear-gradient(-45deg,#6915C3,#3a0277)");
         localStorage.setItem('--primarycolor',"#6915C3")
         localStorage.setItem("--primarydarkpurple","#550EA0")
+        localStorage.setItem("--gradient","linear-gradient(-45deg,#6915C3,#3a0277)")
     }
     
 })
@@ -52,42 +56,42 @@ document.addEventListener("DOMContentLoaded",()=>{
     if (savedPrimaryColor && savedPrimaryDarkPurple) {
         document.documentElement.style.setProperty('--primarycolor', savedPrimaryColor);
         document.documentElement.style.setProperty('--primarydarkpurple', savedPrimaryDarkPurple);
-        if (savedPrimaryColor === "black") {
+        if (savedPrimaryColor === "Black") {
             darkmode.classList.add("active");
            darkmode.firstElementChild.classList.toggle("activeknob")
         }
     }
     checkDarkMode()
-    checkSwitch(os,onlineStatusSwitch)
-checkSwitch(ts,typingStatusSwitch)
-checkSwitch(ch,clearHistorySwitch)
+//     checkSwitch(os,onlineStatusSwitch)
+// checkSwitch(ts,typingStatusSwitch)
+// checkSwitch(ch,clearHistorySwitch)
 })
 
 
 
-let onlineStatusSwitch=switchElement.item(1)
-let typingStatusSwitch=switchElement.item(2)
-let clearHistorySwitch=switchElement.item(3)
+// let onlineStatusSwitch=switchElement.item(1)
+// let typingStatusSwitch=switchElement.item(2)
+// let clearHistorySwitch=switchElement.item(3)
 
-const switchHandler=(element,key)=>{
-    element.addEventListener("click",()=>{
-    let active=element.classList.contains("active")
-    if(active){
+// const switchHandler=(element,key)=>{
+//     element.addEventListener("click",()=>{
+//     let active=element.classList.contains("active")
+//     if(active){
         
         
 
-    document.cookie = `${key}=true; path=/;max-age=${86400}`
+//     document.cookie = `${key}=true; path=/;max-age=${86400}`
     
-    }
-    else if(!active){
-       document.cookie = `${key}=false; path=/;max-age=${86400}`
-    }
-    })
-}
+//     }
+//     else if(!active){
+//        document.cookie = `${key}=false; path=/;max-age=${86400}`
+//     }
+//     })
+// }
 
-switchHandler(onlineStatusSwitch,"onlineStatus")
-switchHandler(typingStatusSwitch,"typingStatus")
-switchHandler(clearHistorySwitch,"clearHistory")
+// switchHandler(onlineStatusSwitch,"onlineStatus")
+// switchHandler(typingStatusSwitch,"typingStatus")
+// switchHandler(clearHistorySwitch,"clearHistory")
 
 
 

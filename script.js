@@ -101,7 +101,7 @@ let activeRooms=[]
 const wrap = middleware => (socket, next) => middleware(socket.request, {}, next)
 io.use(wrap(sessionMiddleware))
 io.on('connection', (socket) => {
-  console.log('a user connected ' + socket.id);
+  // console.log('a user connected ' + socket.id);
   
   // Extract user names
   let myName = socket.request.session.login.username;
@@ -118,7 +118,7 @@ io.on('connection', (socket) => {
     (room.userOne === yourName && room.userTwo === myName)
   );
   
-  console.log('Existing rooms:', existingRooms);
+  // console.log('Existing rooms:', existingRooms);
 
   socket.on("room", (roomId) => {
     
@@ -136,6 +136,10 @@ io.on('connection', (socket) => {
     activeMembers=Array.from(activeMembers)
     if(activeMembers.length===2){
     io.to(roomId).emit("joining")
+  }
+  
+if(activeMembers.length<2){
+    io.to(roomId).emit("leaving")
     }
   });
 socket.on("userTyping",(statusTyping,roomId)=>{
