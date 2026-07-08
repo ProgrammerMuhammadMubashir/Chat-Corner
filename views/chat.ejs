@@ -1,42 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
+    <title></title>
+
+    <link rel="stylesheet" href="chat.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
 
-    
-    <div id="chatDetails">
-<div><img src="#" id="imgOfOther"></div>
-<div>
-    
-    <p id="usernameOfOther">
+<div class="chatPage">
 
-    </p>
-    <span id="statusOfOther"></span>
+    <!-- Chat Header -->
+    <header id="chatDetails">
+
+        <div class="userInfo">
+
+            <div class="avatarWrapper">
+                <img src="#" id="imgOfOther">
+                <span class="onlineDot"></span>
+            </div>
+
+            <div class="userText">
+
+                <p id="usernameOfOther"></p>
+
+                <span id="statusOfOther"></span>
+
+            </div>
+
+        </div>
+
+   
+
+    </header>
+
+
+    <!-- Messages -->
+
+    <main id="chatMain">
+
+        <div id="message1"></div>
+
+    </main>
+
+
+    <!-- Input -->
+
+    <footer class="chatFooter">
+
+        <form id="extramsg">
+
+          
+
+            <input
+                type="text"
+                id="Typemessage"
+                placeholder="Type a message..."
+                autocomplete="off">
+
+        
+
+            <input
+                type="button"
+                value="Send"
+                id="sendmsgbtn">
+
+        </form>
+
+    </footer>
 
 </div>
-    </div>
 
-    <div id="chatMain">
-      <div id="message1">
-
-
-    </div>
-    <form id="extramsg">
-    <input type="text" id="Typemessage" placeholder="Type message here">
-    <input type="button" value="Send" id="sendmsgbtn">
-
-</form>
 <script src="/socket.io/socket.io.js"></script>
-<script>
-
-
-    </script>
 <script src="scriptChat.js"></script>
+
 </body>
 </html>

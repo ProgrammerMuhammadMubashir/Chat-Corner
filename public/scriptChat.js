@@ -16,7 +16,7 @@ imgOfOther.src=urlParams.get("imgUrl")
     } // To access other user for chat processing
     })
 
-
+    document.title=`${urlParams.get("username")} _ Chat `
 
   socket.on("roomId", (roomId) => {
     console.log(roomId);
@@ -41,23 +41,95 @@ if(event.key==="Enter"){
     })
   });
 
- 
 
   socket.on("userTyping", (statusTyping) => {
-    statusOfOther.innerText = `${statusTyping} is typing....`;
+ statusOfOther.innerText=`${statusTyping} is Typing...`
+if(!document.getElementById("typingIndicator")){
+    message1.innerHTML+=`<div class="typingMessage" id="typingIndicator">
+
+    <div>
+
+        <div class="typingBubble">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="typingText">
+            Typing...
+        </div>
+
+    </div>
+
+</div>`
+let chatbox=document.getElementById("messag1")
+chatbox?.scrollTo({
+  top:chatbox.scrollHeight,
+  behavior:"smooth"
+})
+}
+
   });
   socket.on("userNotTyping",(statusNotTyping,roomId)=>{
     statusOfOther.innerText=""
+    document.getElementById("typingIndicator")?.remove()
   })
   socket.on("newMessage",(msg,socketId)=>{
+    
     console.log(msg,socketId)
     if(socketId===socket.id){
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById("typingIndicator")?.remove()
+message1.innerHTML+=`
+<div class="message sent">
 
-message1.innerHTML+=`<p id='me'>${msg}</p>` //id's me and compyter will keep sepeate msgs of both
+<div class="messageContent">
+
+    <div class="bubble" id="me">
+        ${msg}
+    </div>
+
+    <span class="msgTime">${time}</span>
+
+</div>
+
+</div>` //id's me and computer will keep sepeate msgs of both
+
+let chatbox=document.getElementById("messag1")
+chatbox?.scrollTo({
+  top:chatbox.scrollHeight,
+  behavior:"smooth"
+})
 }
 else if(!(socketId===socket.id)){
+  const now = new Date();
+  const time = now.toLocaleTimeString();
+  document.getElementById("typingIndicator")?.remove()
+    message1.innerHTML+=`
+    <div class="message received">
 
-    message1.innerHTML+=`<p id='computer'>${msg}</p>`
+    <img src="${imgOfOther.src}" class="messageAvatar">
+
+    <div class="messageContent">
+
+        <div class="bubble" id="computer">
+            ${msg}
+        </div>
+
+        <span class="msgTime">${time}</span>
+
+    </div>
+
+</div>
+`
+let chatbox=document.getElementById("messag1")
+chatbox?.scrollTo({
+  top:chatbox.scrollHeight,
+  behavior:"smooth"
+})
     }
   })
     socket.on("joining",()=>{

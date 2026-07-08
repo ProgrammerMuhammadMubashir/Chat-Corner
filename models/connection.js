@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config()
-const DBurl = process.env.DB_URL;
+const DBurl = process.env.DB_URL 
 mongoose.connect(`${DBurl}`).then(()=>{
     console.log("Connected to Database successfully")
 }).catch(()=>{
